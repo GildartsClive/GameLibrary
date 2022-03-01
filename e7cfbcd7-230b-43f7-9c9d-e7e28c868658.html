@@ -25,14 +25,17 @@ html {
   margin: 0;                                          /* no margins */
   background-color: black;                            /* black background */
   vertical-align: middle;                             /* align vertical middle */
-  heigth: 48px;
+}
+
+.title img {
+	vertical-align: middle;                           /* images in title aligned vertical middle */
 }
 
 .title {
 	width: 100%;                                      /* title container width 100% */
 	grid-column: 1 / span 3;                          /* column 1 but spans 3 */
     grid-row: 1;                                      /* row 1 */
-	heigth: 48px;
+
 }
 .cards {                                              /* empty not used here */
 }
@@ -83,6 +86,10 @@ html {
 .detailstable {
   width: 100%;                                         /* set to full width of details */
   padding: 5px;                                        /* add some padding */
+}
+
+.details img {
+	max-width: 100%;                                   /* make sure images don't overflow in width on details */
 }
 
 .descriptiontitle {
@@ -168,11 +175,11 @@ a:active {
 
 		</style>
 	</head>
-	<body style="background-image: linear-gradient(to bottom, #24282f, rgba(100,100,100,0.73))">
+	<body style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.52), rgba(0,0,0,0.73)), url('e7cfbcd7-230b-43f7-9c9d-e7e28c868658/df3e2075-d529-45b3-b5b7-99710c8a4c23.jpg');">
 		<div class="cards">
 			<div class="card">
 				<div class="title">
-					<h2><button onclick="window.history.back()" class="MenuButton">Back</button> Kingdom Hearts HD 1.5 + 2.5 ReMIX</h2>
+					<h2><button onclick="window.history.back()" class="MenuButton">Back</button><img alt="icon" Height="48" class="lozad" data-src="e7cfbcd7-230b-43f7-9c9d-e7e28c868658/0b83eedf-276d-4cfb-aa8a-81da229a6b78.png"/> Kingdom Hearts HD 1.5 + 2.5 ReMIX</h2>
 				</div>
 				<div class="detailstitle">
 				<H3>Details</H3>
@@ -181,7 +188,11 @@ a:active {
 					<div style="overflow: auto;">
 						<TABLE class="detailstable">
 							<col style="width:50%" />
-							<col style="width:50%" />							<TR>
+							<col style="width:50%" />
+							<TR>
+								<TD style="text-align:center" Colspan="2"><img alt="cover" Height="175" class="lozad" data-src="e7cfbcd7-230b-43f7-9c9d-e7e28c868658/4e253a13-3d65-4cfd-ad49-c5add7dcc5e0.jpg"/></TD>
+							</TR>
+							<TR>
 								<TD>Playtime</TD>
 								<TD>7m 59s</TD>
 							</TR>
@@ -273,5 +284,10 @@ a:active {
 				</div>
 			</div>
 		</div>
-	</body>
+		<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+		<script>
+			const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+			observer.observe();
+		</script>
+	</body>	
 </html>

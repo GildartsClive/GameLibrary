@@ -25,14 +25,17 @@ html {
   margin: 0;                                          /* no margins */
   background-color: black;                            /* black background */
   vertical-align: middle;                             /* align vertical middle */
-  heigth: 48px;
+}
+
+.title img {
+	vertical-align: middle;                           /* images in title aligned vertical middle */
 }
 
 .title {
 	width: 100%;                                      /* title container width 100% */
 	grid-column: 1 / span 3;                          /* column 1 but spans 3 */
     grid-row: 1;                                      /* row 1 */
-	heigth: 48px;
+
 }
 .cards {                                              /* empty not used here */
 }
@@ -83,6 +86,10 @@ html {
 .detailstable {
   width: 100%;                                         /* set to full width of details */
   padding: 5px;                                        /* add some padding */
+}
+
+.details img {
+	max-width: 100%;                                   /* make sure images don't overflow in width on details */
 }
 
 .descriptiontitle {
@@ -168,11 +175,11 @@ a:active {
 
 		</style>
 	</head>
-	<body style="background-image: linear-gradient(to bottom, #24282f, rgba(100,100,100,0.73))">
+	<body style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.52), rgba(0,0,0,0.73)), url('56c3c749-e08a-480e-b744-d25fc37ab49c/e7ee0ed0-4640-4d68-8a1b-cd8dad1e2806.png');">
 		<div class="cards">
 			<div class="card">
 				<div class="title">
-					<h2><button onclick="window.history.back()" class="MenuButton">Back</button> Genshin Impact</h2>
+					<h2><button onclick="window.history.back()" class="MenuButton">Back</button><img alt="icon" Height="48" class="lozad" data-src="56c3c749-e08a-480e-b744-d25fc37ab49c/2c2fec3d-fae9-4617-b2ce-0388af1c27ba.png"/> Genshin Impact</h2>
 				</div>
 				<div class="detailstitle">
 				<H3>Details</H3>
@@ -181,13 +188,17 @@ a:active {
 					<div style="overflow: auto;">
 						<TABLE class="detailstable">
 							<col style="width:50%" />
-							<col style="width:50%" />							<TR>
+							<col style="width:50%" />
+							<TR>
+								<TD style="text-align:center" Colspan="2"><img alt="cover" Height="175" class="lozad" data-src="56c3c749-e08a-480e-b744-d25fc37ab49c/59e37cb3-d325-4640-97df-d4fa7531f6ed.jpg"/></TD>
+							</TR>
+							<TR>
 								<TD>Playtime</TD>
 								<TD>4h 44m 51s</TD>
 							</TR>
 							<TR>
 								<TD>Last Activity</TD>
-								<TD><a href="default%20list%20text%20combobox%20quicklinks_lastactivity_descending_name_ascending.html#quicklink-2/21/2022">2/21/2022</a> 21:11:18</TD>
+								<TD><a href="default%20list%20text%20combobox%20quicklinks_lastactivity_descending_name_ascending.html#quicklink-2/28/2022">2/28/2022</a> 0:22:13</TD>
 							</TR>
 							<TR>
 								<TD>Added</TD>
@@ -287,5 +298,10 @@ Customer Service Email: genshin_cs@mihoyo.com</p>
 				</div>
 			</div>
 		</div>
-	</body>
+		<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+		<script>
+			const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+			observer.observe();
+		</script>
+	</body>	
 </html>
